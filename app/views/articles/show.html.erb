@@ -1,0 +1,11 @@
+<h1>This is a show portion</h1>
+
+<h1><%= @article.title%>
+<p><%= @article.body%></p>
+<p><%= @article.age%></p>
+
+<h6><%= link_to "EDIT", edit_article_path(@article) %></h6>
+<h6><%= link_to "DELETE", article_path(@article), data: {
+    turbo_method: :delete,
+    turbo_confirm: "ARE YOU SURE??"
+} %></h6>

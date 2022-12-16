@@ -1,0 +1,30 @@
+<h1>Articles#index</h1>
+<p>Find me in app/views/articles/index.html.erb</p>
+<%=link_to "New Article",new_article_path%>
+<table class="table" align="center">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Body</th>
+      <th scope="col">Age</th>
+      <th scope="col">UserName</th>
+      <th scope="col">Password</th>
+      <th scope="col">Birthday</th>
+    </tr>
+  </thead>
+  <tbody>
+   <% @articles.each do |article|%>
+   <tr>
+       <td><%= link_to article.id,article %></td>
+       <td><%=article.title%></td>
+       <td><%=article.body%></td>
+       <td><%=article.age%></td>
+       <td><%=article.user_name%></td>
+       <td><%=article.password%></td>
+       <td><%=article.date_of_birth%></td>
+   </tr>
+    <% end %>
+  </tbody>
+</table>
+

@@ -1,0 +1,60 @@
+<div align="center">
+<h1>NEW ARTICLE</h1>
+<%= form_with model: article do |form| %>
+
+    <div>
+    
+     <%= form.label :title %>
+     <%= form.text_field :title %>
+     
+        <% article.errors.full_messages_for(:title).each do |message| %>
+        <div>    <%= message %> </div>
+        <% end %>
+     
+    </div>
+        <br>
+    <div>
+        <%= form.label :body%>
+            <%= form.text_area :body%>
+                <% article.errors.full_messages_for(:body).each do |message|%>
+                    <div>
+                        <%= message%>
+                    </div>
+                    <%end%>
+    </div>
+    <div>
+        <%= form.label :user_name%>
+            <%= form.text_field :user_name%>
+                <% article.errors.full_messages_for(:user_name).each do |message|%>
+
+                    <div>
+                        <%= message%>
+                    </div>
+                <%end%>
+    </div>
+    <div>
+        <%= form.label :Password%>
+        <%= form.text_field (:password) %>
+                <% article.errors.full_messages_for(:password).each do |message|%>
+
+                    <div>
+                        <%= message%>
+                    </div>
+                <%end%>
+    </div>
+    <div>
+            <%= form.label :Birthday%>
+            <%= form.date_field (:date_of_birth) %>
+                <% article.errors.full_messages_for(:date_checker).each do |message|%>
+
+                    <div>
+                        <%= message%>
+                    </div>
+                <%end%>
+    </div>
+    
+    <div>
+        <%= form.submit%>
+    </div>
+    <% end %>
+    </div>
